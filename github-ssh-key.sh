@@ -26,7 +26,7 @@ echo 'Adding the SSH key to your GitHub account...'
 
 ssh_public_key=`cat $ssh_key_output_file.pub`
 
-curl -s -d "{ \"title\": \"$ssh_key_name\", \"key\": \"$ssh_public_key\" }" \
+curl -d "{ \"title\": \"$ssh_key_name\", \"key\": \"$ssh_public_key\" }" \
      -H "Authorization: token $personal_access_token" \
      -H 'Content-Type: application/json' \
      https://api.github.com/user/keys \
